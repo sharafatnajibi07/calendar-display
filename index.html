@@ -1,23 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="refresh" content="0; url=https://outlook.office365.com/owa/calendar/4c3e24c3b9fc418fbd1d0d8f4d4fc2f5@citywideps.com/c61aaadeb7104b6ab7b18f7cb0e4d78f6342506111589640934/calendar.html">
   <title>Visitor Schedule</title>
+
+  <!-- Auto refresh every 5 minutes -->
+  <meta http-equiv="refresh" content="300">
+
+  <!-- Redirect after 3 seconds -->
+  <script>
+    setTimeout(function() {
+      window.location.href = "https://outlook.office365.com/owa/calendar/4c3e24c3b9fc418fbd1d0d8f4d4fc2f5@citywideps.com/c61aaadeb7104b6ab7b18f7cb0e4d78f6342506111589640934/calendar.html";
+    }, 3000);
+  </script>
+
   <style>
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
       background: black;
       color: white;
+      font-family: Arial, sans-serif;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
       height: 100vh;
-      margin: 0;
-      font-size: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 100px;
+      margin-bottom: 20px;
+    }
+
+    .today {
+      font-size: 50px;
+      background: #ffeb3b;
+      color: black;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .loading {
+      margin-top: 40px;
+      font-size: 30px;
+      opacity: 0.7;
     }
   </style>
 </head>
+
 <body>
-  Opening Visitor Schedule…
+
+  <h1>Visitor Schedule</h1>
+
+  <div class="today" id="today"></div>
+
+  <div class="loading">Loading schedule...</div>
+
+  <script>
+    const options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    };
+
+    document.getElementById("today").innerText =
+      new Date().toLocaleDateString(undefined, options);
+  </script>
+
 </body>
 </html>
