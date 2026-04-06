@@ -1,31 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Visitor Calendar</title>
-  <meta http-equiv="refresh" content="60"> <!-- auto refresh -->
+  <title>Visitor Schedule</title>
+  <meta http-equiv="refresh" content="60">
   <style>
     body {
       margin: 0;
+      background: black;
+      color: white;
       font-family: Arial, sans-serif;
-      background: #000;
-      color: #fff;
+      overflow: hidden;
     }
+
     h1 {
       text-align: center;
-      font-size: 48px;
+      font-size: 70px; /* BIGGER TITLE */
       margin: 20px 0;
     }
-    iframe {
+
+    .container {
       width: 100%;
       height: 90vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    iframe {
+      width: 140%;          /* make it wider */
+      height: 120%;         /* make it taller */
       border: none;
-      transform: scale(1.2); /* zoom in */
-      transform-origin: top left;
+      transform: scale(1.3); /* ZOOM LEVEL */
+      transform-origin: top center;
     }
   </style>
 </head>
+
 <body>
   <h1>Visitor Schedule</h1>
-  <iframe src="https://outlook.office365.com/owa/calendar/4c3e24c3b9fc418fbd1d0d8f4d4fc2f5@citywideps.com/c61aaadeb7104b6ab7b18f7cb0e4d78f6342506111589640934/calendar.html"></iframe>
+
+  <div class="container">
+    <iframe src="https://outlook.office365.com/owa/calendar/4c3e24c3b9fc418fbd1d0d8f4d4fc2f5@citywideps.com/c61aaadeb7104b6ab7b18f7cb0e4d78f6342506111589640934/calendar.html"></iframe>
+  </div>
+
 </body>
 </html>
